@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Spot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: Arial;
+        }
+        .s-form{
+            border-style: solid;
+            border-width: 0.5px;
+            border-radius: 5px;
+            padding: 10px;
+            border-color: gray;
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Sell a Product</h1></center>
+    <hr>
+    <div class="s-form">
+    <form>
+        <label for="u-name">Your Name</label><br>
+        <input type="text" name="u-name" required><br>
+        <p></p>
+        <label for="p-name">Product Name</label><br>
+        <input type="text" name="p-name" required><br>
+        <p></p>
+        <label for="cat">Type</label><br>
+        <select name="cat" required>
+            <option>Not Provided</option>
+            <option>Electronics</option>
+            <option>Hardware</option>
+            <option>Furniture</option>
+            <option>Tools</option>
+        </select><br>
+        <p></p>
+        <label for="cur">Currency</label><br>
+        <select name="cur"required>
+            <option>Not Provided</option>
+            <option>₹</option>
+            <option>$</option>
+            <option>€</option>
+            <option>₩</option>
+            <option>¥</option>
+        </select><br>
+        <p></p>
+        <label for="p-des">Description</label><br>
+        <textarea name="p-des" required cols="50" rows="7"></textarea><br>
+        <p></p>
+        <label for="u-mail">Your Email</label><br>
+        <input type="email" required><br>
+        <p></p>
+        <label for="u-num">Your Phone Number (Optional)</label><br>
+        <input type="number"><br>
+        <p></p>
+        <input type="submit">
+    </form>
+    </div>
+</body>
+</html>
