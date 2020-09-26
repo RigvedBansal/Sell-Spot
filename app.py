@@ -2,7 +2,7 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-Flask = (__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def home():
