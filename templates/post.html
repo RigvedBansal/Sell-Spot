@@ -6,23 +6,55 @@
     <title>Sell Spot</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .des{
+            font-size: 17px;
+        }
+        .p-ara{
+            margin-left: 20px;
+            margin-right: 250px;
+            margin-top: 20px;
+            padding: 10px;
+            border-style: solid;
+            border-width: 0.5px;
+            border-radius: 5px;
+            border-color: gray;
+        }
+    </style>
 </head>
 <body>
-    <div class="w3-bar w3-border w3-round w3-light-grey">
-        <a href="/" class="w3-bar-item w3-button">Home</a>
-        <a href="/sell" class="w3-bar-item w3-button">Sell</a>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">SellSpot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/sell">Sell <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+      </nav>
+      <!-- navbar-ends -->
       </div>
+      <div class="p-ara">
       <h1>{{ post.username }}</h1>
       <hr>
-      <h3>{{ post.productname }}</h3><br>
-      <p></p>
+      <h3>Product: {{ post.productname }}</h3><br>
+      <h3>Price: {{ post.price }}</h3><br>
+    <div class="des">
       <p>Description:- </p>
       <p>{{ post.content }}</p><br>
+    </div>
       <hr>
-      Price: {{ post.price }}<br>
-      <h4>Contact owner at</h4><br>
+      <h4>Contact owner at<br>
+        <p></p>
       Mail:- {{ post.mail }}<br>
-      Number:- {{ post.number }}
+      <p></p>
+      Number:- {{ post.number }}</h4>
+    </div>
 
 </body>
 </html>
