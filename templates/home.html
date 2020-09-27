@@ -36,6 +36,17 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!-- js-ends -->
-      <h1><a href="/login">LOGIN TO CONTINUE</a></h1>
+      <p></p>
+      <h3 style="margin: 5px;">Welcome {{ name }}</h3><hr>
+      {% for post in posts %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.productname }}</h5>
+          <h5 class="card-title">Sold By: {{ post.username }}</h5>
+          <p class="card-text">Product Type: {{ post.cat }}</p>
+          <a href="{{ url_for('post', post_id=post.id) }}" class="btn btn-primary">view</a>
+        </div>
+      </div>
+      {% endfor %}
 </body>
 </html>
