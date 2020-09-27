@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sell Spot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-
-    </style>
 </head>
 <body>
     <div class="w3-bar w3-border w3-round w3-light-grey">
         <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="/sell" class="w3-bar-item w3-button">Sell</a>
       </div>
-      <p></p>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.p_name }}</h5>
-          <h5 class="card-title">{{ post.name }}</h5>
-          <p class="card-text">This is {{ post.p_name }} sold by {{ post.name }}</p>
-          <a href="{{ url_for('post', post_id=post.id) }}" class="btn btn-primary">view</a>
-        </div>
-      </div>
+      {{ post.name }}
+      <hr>
+      {{ post.p_name }}<br>
+      <p>{{ post.content }}</p><br>
+      <hr>
+      Price: {{ post.price }}<br>
+      <p>Contact owner at</p><br>
+      {{ post.email }}<br>
+      {{ post.number }}
+
 </body>
 </html>

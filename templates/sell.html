@@ -21,15 +21,20 @@
     </style>
 </head>
 <body>
-    <center><h1>Sell a Product</h1></center>
+    <center><h1>Sell a Product</h1><br>
+        <a href="/">Home</a>
+    </center>
     <hr>
     <div class="s-form">
-    <form>
+    <formname="addForm" autocomplete="off" id="addForm" method="POST" action="{{ url_for('addpost') }}">
         <label for="u-name">Your Name</label><br>
         <input type="text" name="u-name" required><br>
         <p></p>
         <label for="p-name">Product Name</label><br>
         <input type="text" name="p-name" required><br>
+        <p></p>
+        <label for="pr">Price</label><br>
+        <input type="number" required><br>
         <p></p>
         <label for="cat">Type</label><br>
         <select name="cat" required>
