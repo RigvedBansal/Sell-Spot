@@ -17,7 +17,7 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">SellSpot</a>
+      <a class="navbar-brand" href="/h">SellSpot</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,8 +27,10 @@
           <li class="nav-item active">
             <a class="nav-link" href="/sell">Sell <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+          </li>
         </ul>
-      </div>
     </nav>
     <!-- navbar-ends -->
     <!-- js -->
@@ -42,7 +44,7 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{ post.productname }}</h5>
-          <h5 class="card-title">Sold By: {{ post.username }}</h5>
+          <h5 class="card-title">Sold By: {{ post.name }}</h5>
           <p class="card-text">Product Type: {{ post.cat }}</p>
           <a href="{{ url_for('post', post_id=post.id) }}" class="btn btn-primary">view</a>
         </div>

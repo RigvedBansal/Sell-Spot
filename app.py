@@ -123,7 +123,7 @@ def add():
     """
     sell page route
     """
-    return render_template('sell.html')
+    return render_template('sell.html', name=current_user.username)
 
 @app.route('/addpost', methods=['POST'])
 @login_required
@@ -131,7 +131,7 @@ def addpost():
     """
     sell function route
     """
-    name = current_user.username
+    name = request.form['uname']
     productname = request.form['pname']
     price = request.form['pr']
     content = request.form['p-des']
@@ -144,7 +144,7 @@ def addpost():
     db.session.add(post)
     db.session.commit()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     db.create_all()
