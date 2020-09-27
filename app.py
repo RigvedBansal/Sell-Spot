@@ -1,3 +1,6 @@
+"""
+Flask Olx Like app sell spot
+"""
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
@@ -9,6 +12,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 
 class Product(db.Model):
+    """
+    Database class
+    """
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50))
     productname = db.Column(db.String(50))
@@ -21,6 +27,9 @@ class Product(db.Model):
 
 @app.route('/')
 def index():
+    """
+    index route
+    """
     posts = Product.query.order_by(Product.date_posted.desc()).all()
 
     return render_template('index.html', posts=posts)
@@ -28,16 +37,25 @@ def index():
 
 @app.route('/post/<int:post_id>')
 def post(post_id):
+    """
+    Post page route
+    """
     post = Product.query.filter_by(id=post_id).one()
 
     return render_template('post.html', post=post)
 
 @app.route('/sell')
 def add():
+    """
+    sell page route
+    """
     return render_template('sell.html')
 
 @app.route('/addpost', methods=['POST'])
 def addpost():
+    """
+    sell function route
+    """
     username = request.form['uname']
     productname = request.form['pname']
     price = request.form['pr']
@@ -56,3 +74,4 @@ def addpost():
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
+    #IN PRODUCTION debug=False
