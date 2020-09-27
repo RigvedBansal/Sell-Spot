@@ -26,15 +26,15 @@
     </center>
     <hr>
     <div class="s-form">
-    <formname="addForm" autocomplete="off" id="addForm" method="POST" action="{{ url_for('addpost') }}">
-        <label for="u-name">Your Name</label><br>
-        <input type="text" name="u-name" required><br>
+    <form name="addForm" autocomplete="off" id="addForm" method="POST" action="{{ url_for('addpost') }}">
+        <label for="uname">Your Name</label><br>
+        <input type="text" name="uname" required><br>
         <p></p>
-        <label for="p-name">Product Name</label><br>
-        <input type="text" name="p-name" required><br>
+        <label for="pname">Product Name</label><br>
+        <input type="text" name="pname" required><br>
         <p></p>
         <label for="pr">Price</label><br>
-        <input type="number" required><br>
+        <input type="text" required name="pr"><br>
         <p></p>
         <label for="cat">Type</label><br>
         <select name="cat" required>
@@ -45,24 +45,14 @@
             <option>Tools</option>
         </select><br>
         <p></p>
-        <label for="cur">Currency</label><br>
-        <select name="cur"required>
-            <option>Not Provided</option>
-            <option>₹</option>
-            <option>$</option>
-            <option>€</option>
-            <option>₩</option>
-            <option>¥</option>
-        </select><br>
-        <p></p>
         <label for="p-des">Description</label><br>
         <textarea name="p-des" required cols="50" rows="7"></textarea><br>
         <p></p>
         <label for="u-mail">Your Email</label><br>
-        <input type="email" required><br>
+        <input type="email" required name="u-mail"><br>
         <p></p>
-        <label for="u-num">Your Phone Number (Optional)</label><br>
-        <input type="number"><br>
+        <label for="u-num">Your Phone Number</label><br>
+        <input type="number" required name="u-num"><br>
         <p></p>
         <input type="submit">
     </form>

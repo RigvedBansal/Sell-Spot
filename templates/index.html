@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sell Spot</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
 
     </style>
@@ -15,13 +16,15 @@
         <a href="/sell" class="w3-bar-item w3-button">Sell</a>
       </div>
       <p></p>
+      {% for post in posts %}
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{ post.p_name }}</h5>
-          <h5 class="card-title">{{ post.name }}</h5>
-          <p class="card-text">This is {{ post.p_name }} sold by {{ post.name }}</p>
+          <h5 class="card-title">{{ post.productname }}</h5>
+          <h5 class="card-title">{{ post.username }}</h5>
+          <p class="card-text">This is {{ post.productname }} sold by {{ post.username }}</p>
           <a href="{{ url_for('post', post_id=post.id) }}" class="btn btn-primary">view</a>
         </div>
       </div>
+      {% endfor %}
 </body>
 </html>

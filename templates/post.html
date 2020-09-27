@@ -12,15 +12,17 @@
         <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="/sell" class="w3-bar-item w3-button">Sell</a>
       </div>
-      {{ post.name }}
+      <h1>{{ post.username }}</h1>
       <hr>
-      {{ post.p_name }}<br>
+      <h3>{{ post.productname }}</h3><br>
+      <p></p>
+      <p>Description:- </p>
       <p>{{ post.content }}</p><br>
       <hr>
       Price: {{ post.price }}<br>
-      <p>Contact owner at</p><br>
-      {{ post.email }}<br>
-      {{ post.number }}
+      <h4>Contact owner at</h4><br>
+      Mail:- {{ post.mail }}<br>
+      Number:- {{ post.number }}
 
 </body>
 </html>

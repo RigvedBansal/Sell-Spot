@@ -4,30 +4,27 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///products.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
 db = SQLAlchemy(app)
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50))
-    p_name = db.Column(db.String(50))
+    username = db.Column(db.String(50))
+    productname = db.Column(db.String(50))
+    price = db.Column(db.String(20))
     date_posted = db.Column(db.DateTime)
     content = db.Column(db.Text)
-    cat = db.Column(db.String(20))
-    price = db.Column(db.String(20))
     mail = db.Column(db.String(50))
-    number = db.Column(db.Integer)
+    number = db.Column(db.String(50))
+    cat = db.Column(db.String(50))
 
 @app.route('/')
 def index():
     posts = Product.query.order_by(Product.date_posted.desc()).all()
 
-    return render_template("index.html", posts=posts)
+    return render_template('index.html', posts=posts)
 
-@app.route('/sell')
-def sell():
-    return render_template("sell.html")
 
 @app.route('/post/<int:post_id>')
 def post(post_id):
@@ -35,29 +32,27 @@ def post(post_id):
 
     return render_template('post.html', post=post)
 
-@app.route('/addpost', methods=['POST', 'GET'])
+@app.route('/sell')
+def add():
+    return render_template('sell.html')
+
+@app.route('/addpost', methods=['POST'])
 def addpost():
-    name = request.form['u-name']
-    p_name = request.form['p-name']
+    username = request.form['uname']
+    productname = request.form['pname']
+    price = request.form['pr']
     content = request.form['p-des']
-    cat = request.form['cat']
-    pri = request.form['pr']
-    cur = request.form['cur']
-    price = cur + pri
     mail = request.form['u-mail']
     number = request.form['u-num']
-    if number == "" or number == " ":
-        number = None
-    else:
-        number = number
+    cat = request.form['cat']
 
-    post = Product(name=name, p_name=p_name, content=content, cat=cat, price=price, date_posted=datetime.now())
+    post = Product(username=username, productname=productname, price=price, content=content, mail=mail, number=number, cat=cat , date_posted=datetime.now())
 
     db.session.add(post)
     db.session.commit()
 
     return redirect(url_for('index'))
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
