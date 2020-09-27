@@ -20,7 +20,7 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">SellSpot</a>
+        <a class="navbar-brand" href="/h">SellSpot</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,7 @@
     <div class="s-form">
     <form name="addForm" autocomplete="off" id="addForm" method="POST" action="{{ url_for('addpost') }}">
         <label for="uname">Your Name</label><br>
-        <input type="text" name="uname" required><br>
+        <input type="text" name="uname" required value="{{ name }}" readonly><br>
         <p></p>
         <label for="pname">Product Name</label><br>
         <input type="text" name="pname" required><br>
