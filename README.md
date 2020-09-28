@@ -1,4 +1,5 @@
-# Flask sell spot olx like app Project
+# Flask sell spot app
+# Sell your old stuff
 
 # How to Run
 
